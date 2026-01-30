@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain State Training</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #002855;
+            color: white;
+            margin: 0;
+            overflow-x: hidden;
+            /* Hide scrollbar for Chrome, Safari and Opera */
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            /* Hide scrollbar for IE, Edge and Firefox */
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .font-brand {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        @keyframes border-beam {
+            0% { border-image-source: linear-gradient(0deg, #EAAA00, transparent); }
+            50% { border-image-source: linear-gradient(180deg, #EAAA00, transparent); }
+            100% { border-image-source: linear-gradient(360deg, #EAAA00, transparent); }
+        }
+
+        .glow-hover:hover {
+            box-shadow: 0 0 20px 5px rgba(234, 170, 0, 0.4);
+        }
+    </style>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>

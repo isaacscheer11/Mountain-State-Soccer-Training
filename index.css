@@ -1,0 +1,7 @@
+/* Base styles — Tailwind is loaded via CDN in index.html */
+/* Add any custom global overrides here */
+
+:root {
+  --color-navy: #002855;
+  --color-gold: #EAAA00;
+}
