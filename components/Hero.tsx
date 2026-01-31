@@ -19,7 +19,7 @@ const Hero: React.FC<HeroProps> = ({ onScheduleClick }) => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto space-y-12">
+      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto space-y-12 pt-20">
         <div className="space-y-4 animate-in fade-in slide-in-from-bottom-8 duration-700">
           <p className="text-[#EAAA00] font-bold tracking-[0.6em] uppercase text-xs md:text-sm">Gold Standard in Technical Training</p>
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-brand font-black text-white tracking-tighter leading-none drop-shadow-2xl">
