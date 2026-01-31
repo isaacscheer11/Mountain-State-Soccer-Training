@@ -2,6 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { WEEKLY_SCHEDULE } from '../constants';
 
+// Extend Window interface for Calendly
+declare global {
+  interface Window {
+    Calendly: any;
+  }
+}
+
 interface SessionType {
   id: string;
   name: string;
@@ -52,6 +59,18 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ onBack, onShowWaiver, onVie
     },
   ];
 
+  // Initialize Calendly widget when session is selected
+  useEffect(() => {
+    if (selectedSession && window.Calendly) {
+      window.Calendly.initInlineWidget({
+        url: selectedSession.calendlyUrl,
+        parentElement: document.getElementById('calendly-embed'),
+        prefill: {},
+        utm: {}
+      });
+    }
+  }, [selectedSession]);
+
   // CALENDLY EMBED VIEW
   if (selectedSession) {
     return (
@@ -75,8 +94,7 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ onBack, onShowWaiver, onVie
           {/* Calendly Inline Widget */}
           <div className="bg-white rounded-2xl overflow-hidden shadow-2xl" style={{ minHeight: '700px' }}>
             <div
-              className="calendly-inline-widget"
-              data-url={selectedSession.calendlyUrl}
+              id="calendly-embed"
               style={{ minWidth: '320px', height: '700px' }}
             ></div>
           </div>
