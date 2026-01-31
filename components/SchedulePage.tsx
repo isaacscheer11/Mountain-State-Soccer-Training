@@ -66,7 +66,11 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ onBack, onShowWaiver, onVie
         url: selectedSession.calendlyUrl,
         parentElement: document.getElementById('calendly-embed'),
         prefill: {},
-        utm: {}
+        utm: {},
+        // Customize colors to match website theme
+        primaryColor: 'eaaa00',
+        textColor: 'ffffff',
+        backgroundColor: '002855'
       });
     }
   }, [selectedSession]);
@@ -92,35 +96,11 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ onBack, onShowWaiver, onVie
           </div>
 
           {/* Calendly Inline Widget */}
-          <div className="bg-white rounded-2xl overflow-hidden shadow-2xl" style={{ minHeight: '700px' }}>
+          <div className="bg-[#002855] rounded-2xl overflow-hidden shadow-2xl border border-[#EAAA00]/20" style={{ minHeight: '700px' }}>
             <div
               id="calendly-embed"
               style={{ minWidth: '320px', height: '700px' }}
             ></div>
-          </div>
-
-          {/* Info Box */}
-          <div className="bg-[#002855]/50 backdrop-blur-sm p-8 border border-white/5 rounded-2xl">
-            <div className="flex flex-col md:flex-row items-start gap-6">
-              <div className="text-4xl">ℹ️</div>
-              <div className="flex-grow space-y-3">
-                <h4 className="text-xl font-brand font-bold text-[#EAAA00]">Before You Book</h4>
-                <ul className="text-white/70 space-y-2 text-sm">
-                  <li>• All sessions are held in the Morgantown, WV area</li>
-                  <li>• Please arrive 5 minutes early with proper athletic gear</li>
-                  <li>• Cancellations must be made 24 hours in advance</li>
-                  <li>• You'll receive a confirmation email with location details</li>
-                </ul>
-                {onShowWaiver && (
-                  <button
-                    onClick={onShowWaiver}
-                    className="text-[#EAAA00] text-xs font-bold uppercase tracking-widest hover:underline mt-4"
-                  >
-                    View Liability Waiver
-                  </button>
-                )}
-              </div>
-            </div>
           </div>
         </div>
       </div>
