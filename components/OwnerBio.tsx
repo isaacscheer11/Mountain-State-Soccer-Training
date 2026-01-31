@@ -16,12 +16,12 @@ const TRAINERS: TrainerProfile[] = [
   {
     name: "Constantinos Christou",
     role: "Trainer",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&h=400&fit=crop"
+    image: "/Constantinos Christou.jpg"
   },
   {
     name: "Pablo Pozos",
     role: "Trainer",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&h=400&fit=crop"
+    image: "/Pablo Pozos.jpg"
   }
 ];
 
@@ -62,10 +62,10 @@ const OwnerBio: React.FC<OwnerBioProps> = ({ onBack, onSchedule, initialScrollTo
             <div className="relative">
               <div className="w-40 h-40 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-[#EAAA00] shadow-[0_0_50px_rgba(234,170,0,0.2)] bg-[#002855] flex items-center justify-center group">
                  {/* Isaac Scheer WVU White Kit #21 Photo */}
-                 <img 
-                  src="/isaac-scheer.png" 
-                  alt="Isaac Scheer WVU Soccer #21" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                 <img
+                  src="/isaac-scheer.png"
+                  alt="Isaac Scheer WVU Soccer #21"
+                  className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-110"
                  />
               </div>
               <div className="absolute -bottom-2 right-4 bg-[#EAAA00] text-[#002855] text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg">
@@ -99,10 +99,10 @@ const OwnerBio: React.FC<OwnerBioProps> = ({ onBack, onSchedule, initialScrollTo
               {TRAINERS.map((trainer, idx) => (
                 <div key={idx} className="flex flex-col items-center space-y-6 group">
                   <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-white/10 group-hover:border-[#EAAA00] transition-colors duration-500 shadow-xl">
-                    <img 
-                      src={trainer.image} 
-                      alt={trainer.name} 
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    <img
+                      src={trainer.image}
+                      alt={trainer.name}
+                      className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>
                   <div className="space-y-1">
