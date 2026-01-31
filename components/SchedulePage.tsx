@@ -80,8 +80,8 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ onBack, onShowWaiver, onVie
     return (
       <div className="min-h-screen bg-[#001a38] text-white pt-24 pb-20 px-4 animate-in fade-in slide-in-from-right-8 duration-500">
         <div className="max-w-6xl mx-auto space-y-8">
-          {/* Header */}
-          <div className="flex items-end justify-between border-b border-white/10 pb-4">
+          {/* Header with Navigation */}
+          <div className="flex items-center justify-between border-b border-white/10 pb-4">
             <div className="space-y-1">
               <button
                 onClick={() => setSelectedSession(null)}
@@ -93,14 +93,32 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ onBack, onShowWaiver, onVie
               <h1 className="text-2xl md:text-3xl font-brand font-black uppercase text-white leading-none">{selectedSession.name}</h1>
               <p className="text-white/60 text-sm">{selectedSession.duration} • {selectedSession.price}</p>
             </div>
+            <button
+              onClick={onBack}
+              className="flex items-center gap-2 px-6 py-3 bg-[#EAAA00] text-[#002855] font-bold uppercase tracking-widest rounded-lg hover:bg-white transition-all shadow-lg active:scale-95"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+              <span className="hidden md:inline">Home</span>
+            </button>
           </div>
 
-          {/* Calendly Inline Widget */}
-          <div className="bg-[#002855] rounded-2xl overflow-hidden shadow-2xl border border-[#EAAA00]/20" style={{ minHeight: '700px' }}>
+          {/* Calendly Inline Widget with darker styling */}
+          <div className="bg-[#001a38] rounded-2xl overflow-hidden shadow-2xl border-2 border-[#EAAA00]/30 p-4" style={{ minHeight: '700px' }}>
             <div
               id="calendly-embed"
-              style={{ minWidth: '320px', height: '700px' }}
+              className="rounded-xl overflow-hidden"
+              style={{ minWidth: '320px', height: '700px', filter: 'brightness(0.95)' }}
             ></div>
+          </div>
+
+          {/* Bottom Home Button */}
+          <div className="flex justify-center pt-4">
+            <button
+              onClick={onBack}
+              className="px-8 py-4 bg-transparent border-2 border-[#EAAA00] text-[#EAAA00] font-black uppercase tracking-widest rounded-lg hover:bg-[#EAAA00] hover:text-[#002855] transition-all shadow-lg active:scale-95"
+            >
+              ← Return to Home
+            </button>
           </div>
         </div>
       </div>
