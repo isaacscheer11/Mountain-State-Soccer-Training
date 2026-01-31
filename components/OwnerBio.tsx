@@ -63,7 +63,7 @@ const OwnerBio: React.FC<OwnerBioProps> = ({ onBack, onSchedule, initialScrollTo
               <div className="w-40 h-40 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-[#EAAA00] shadow-[0_0_50px_rgba(234,170,0,0.2)] bg-[#002855] flex items-center justify-center group">
                  {/* Isaac Scheer WVU White Kit #21 Photo */}
                  <img 
-                  src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1000" 
+                  src="/isaac-scheer.png" 
                   alt="Isaac Scheer WVU Soccer #21" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                  />

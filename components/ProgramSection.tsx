@@ -2,7 +2,7 @@
 import React from 'react';
 import { PROGRAMS } from '../constants';
 
-const ProgramCard: React.FC<{ program: (typeof PROGRAMS)[0]; index: number; onLearnMore: () => void }> = ({ program, index, onLearnMore }) => {
+const ProgramCard: React.FC<{ program: typeof PROGRAMS[0], index: number }> = ({ program, index }) => {
   return (
     <div 
       className="group relative bg-[#001a38] border border-white/5 p-8 rounded-2xl transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] overflow-hidden"
@@ -23,7 +23,7 @@ const ProgramCard: React.FC<{ program: (typeof PROGRAMS)[0]; index: number; onLe
           {program.description}
         </p>
         
-        <button type="button" onClick={onLearnMore} className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#EAAA00] group-hover:gap-4 transition-all">
+        <button className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#EAAA00] group-hover:gap-4 transition-all">
           Learn More
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
         </button>
@@ -35,11 +35,7 @@ const ProgramCard: React.FC<{ program: (typeof PROGRAMS)[0]; index: number; onLe
   );
 };
 
-interface ProgramSectionProps {
-  onScheduleClick?: () => void;
-}
-
-const ProgramSection: React.FC<ProgramSectionProps> = ({ onScheduleClick }) => {
+const ProgramSection: React.FC = () => {
   return (
     <section id="schedule" className="py-24 bg-[#002855] relative px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -53,7 +49,7 @@ const ProgramSection: React.FC<ProgramSectionProps> = ({ onScheduleClick }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {PROGRAMS.map((p, idx) => (
-            <ProgramCard key={idx} program={p} index={idx} onLearnMore={onScheduleClick ?? (() => {})} />
+            <ProgramCard key={idx} program={p} index={idx} />
           ))}
         </div>
       </div>

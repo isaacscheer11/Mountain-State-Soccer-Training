@@ -1,111 +1,58 @@
 # Mountain State Training
 
-A premium athletic performance training website for Mountain State Training — soccer training and youth clinics based in Morgantown, WV. Built with React, TypeScript, Vite, and Tailwind CSS. WVU-inspired navy and gold aesthetics.
+A modern, responsive website for **Mountain State Training** — an athletic performance training platform featuring WVU-inspired aesthetics. Built with React, TypeScript, and Vite.
 
 ## Features
 
-- **Home** — Hero, programs overview, about section, and contact footer
-- **Schedule** — Book private 1-on-1 or small group sessions; view availability by date
-- **Youth Clinics** — Upcoming soccer skills clinics with registration
-- **About** — Owner bio (Isaac Scheer), trainer profiles, and mission
-- **Contact** — Email and phone with responsive layout
-- **Liability Waiver** — Modal with participation and image rights text
+- **Home** — Hero, about section, program overview
+- **Schedule** — Weekly training sessions, youth clinics, booking info
+- **Clinics** — Soccer skills clinic details and registration
+- **About** — Owner bio and mission
+- **Contact** — Contact form and waiver modal
 
 ## Tech Stack
 
-- **React 19** + **TypeScript**
-- **Vite 6** for dev and build
-- **Tailwind CSS** (via CDN in `index.html` for quick styling)
-- Fonts: Inter, Montserrat (Google Fonts)
+- React 19
+- TypeScript
+- Vite 6
+- Tailwind CSS (CDN)
 
-## Prerequisites
+## Getting Started
 
-- [Node.js](https://nodejs.org/) (v18+ recommended)
+**Prerequisites:** Node.js 18+
 
-## Run Locally
-
-1. **Install dependencies**
+1. Install dependencies:
 
    ```bash
    npm install
    ```
 
-2. **Start dev server**
+2. Run the development server:
 
    ```bash
    npm run dev
    ```
 
-   Open [http://localhost:3000](http://localhost:3000).
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-3. **Build for production**
+## Scripts
 
-   ```bash
-   npm run build
-   ```
-
-4. **Preview production build**
-
-   ```bash
-   npm run preview
-   ```
+| Command        | Description                    |
+| -------------- | ------------------------------ |
+| `npm run dev`  | Start development server       |
+| `npm run build`| Build for production           |
+| `npm run preview` | Preview production build    |
 
 ## Project Structure
 
 ```
-mountain-state-training/
-├── index.html          # Entry HTML (Tailwind, fonts, root)
-├── index.tsx           # React entry
-├── App.tsx             # Main app, routing state, layout
-├── constants.tsx       # Colors, nav, schedule, programs, waiver text
-├── types.ts            # Shared TypeScript types
-├── components/
-│   ├── Header.tsx
-│   ├── Hero.tsx
-│   ├── AboutSection.tsx
-│   ├── ProgramSection.tsx
-│   ├── ContactSection.tsx   # Footer
-│   ├── SchedulePage.tsx
-│   ├── ClinicsPage.tsx
-│   ├── ContactPage.tsx
-│   ├── OwnerBio.tsx
-│   └── WaiverModal.tsx
-├── vite.config.ts
-├── tsconfig.json
-└── package.json
+├── components/     # React components (Header, Hero, SchedulePage, etc.)
+├── App.tsx         # Main app with view routing
+├── constants.tsx   # Site content and configuration
+├── index.css       # Global styles
+└── index.html      # HTML entry point
 ```
-
-## Publishing to GitHub
-
-1. **Install Git** (if needed): [git-scm.com](https://git-scm.com/) — or run `Git-2.52.0-64-bit.exe` from Downloads if you have it.
-
-2. **Open a terminal** in the project folder:
-   ```bash
-   cd C:\Users\isaac\Downloads\mountain-state-training
-   ```
-
-3. **Initialize and commit** (if not already done):
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit: Mountain State Training website"
-   ```
-
-4. **Create a new repository on GitHub**: [github.com/new](https://github.com/new) — name it `mountain-state-training` (or any name), leave it empty (no README/license).
-
-5. **Add remote and push** (replace `YOUR_USERNAME` with your GitHub username):
-   ```bash
-   git branch -M main
-   git remote add origin https://github.com/isaacscheer11/Mountain-State-Soccer-Training.git
-   git push -u origin main
-   ```
-
-   If you use SSH:
-   ```bash
-   git remote add origin git@github.com:isaacscheer11/Mountain-State-Soccer-Training.git
-   git push -u origin main
-   ```
 
 ## License
 
-Private — Mountain State Training. All rights reserved.
+MIT

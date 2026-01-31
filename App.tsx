@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import AboutSection from './components/AboutSection';
-import ProgramSection from './components/ProgramSection';
 import ContactSection from './components/ContactSection';
 import SchedulePage from './components/SchedulePage';
 import ContactPage from './components/ContactPage';
@@ -49,9 +48,6 @@ const App: React.FC = () => {
           <div className="animate-in fade-in duration-700">
             {/* Hero Section */}
             <Hero onScheduleClick={() => setView('schedule')} />
-
-            {/* Programs Section */}
-            <ProgramSection onScheduleClick={() => setView('schedule')} />
 
             {/* Home Page About Section */}
             <div id="about">

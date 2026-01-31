@@ -1,8 +1,10 @@
 {
   "name": "mountain-state-training",
-  "private": true,
+  "description": "Athletic performance training website for Mountain State Training",
   "version": "1.0.0",
-  "description": "Mountain State Training — soccer training and youth clinics in Morgantown, WV",
+  "license": "MIT",
+  "repository": "https://github.com/isaacscheer11/Mountain-State-Soccer-Training.git",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,13 +12,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "react-dom": "^19.2.4",
+    "react": "^19.2.4"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^5.0.0",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
