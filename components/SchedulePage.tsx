@@ -55,7 +55,7 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ onBack, onShowWaiver, onVie
       duration: '60 Min',
       price: '$40/ea',
       icon: '👥',
-      calendlyUrl: 'https://calendly.com/isaacscheer11/small-group'
+      calendlyUrl: 'https://calendly.com/isaacscheer11/new-meeting'
     },
   ];
 
