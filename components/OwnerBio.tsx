@@ -102,7 +102,7 @@ const OwnerBio: React.FC<OwnerBioProps> = ({ onBack, onSchedule, initialScrollTo
                     <img
                       src={trainer.image}
                       alt={trainer.name}
-                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover object-[center_25%] transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>
                   <div className="space-y-1">
