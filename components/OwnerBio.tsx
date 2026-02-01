@@ -11,7 +11,7 @@ const TRAINERS: TrainerProfile[] = [
   {
     name: "Brayden Macomber",
     role: "Trainer",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&h=400&fit=crop"
+    image: "/Brayden-Maycomber.jpeg"
   },
   {
     name: "Constantinos Christou",
@@ -102,7 +102,7 @@ const OwnerBio: React.FC<OwnerBioProps> = ({ onBack, onSchedule, initialScrollTo
                     <img
                       src={trainer.image}
                       alt={trainer.name}
-                      className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover object-[center_10%] transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>
                   <div className="space-y-1">
