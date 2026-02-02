@@ -2,96 +2,94 @@
 import React, { useState, useEffect } from 'react';
 import { WEEKLY_SCHEDULE } from '../constants';
 
+// Extend Window interface for Calendly
+declare global {
+  interface Window {
+    Calendly: any;
+  }
+}
+
 interface ClinicsPageProps {
   onBack: () => void;
   onBook: () => void;
 }
 
 const ClinicsPage: React.FC<ClinicsPageProps> = ({ onBack, onBook }) => {
-  const [isRegistering, setIsRegistering] = useState(false);
-  const [selectedClinicTitle, setSelectedClinicTitle] = useState('');
-  const [isConfirmed, setIsConfirmed] = useState(false);
-  const [formData, setFormData] = useState({
-    athleteName: '',
-    age: '',
-    email: '',
-    notes: ''
-  });
+  const [selectedClinic, setSelectedClinic] = useState<any>(null);
 
-  // Ensure we start at the top when switching to the registration form
+  // Load Calendly widget script
   useEffect(() => {
-    if (isRegistering || isConfirmed) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
+  // Initialize Calendly widget when clinic is selected
+  useEffect(() => {
+    if (selectedClinic && window.Calendly) {
+      window.Calendly.initInlineWidget({
+        url: selectedClinic.calendlyUrl,
+        parentElement: document.getElementById('calendly-clinic-embed'),
+        prefill: {},
+        utm: {},
+        primaryColor: 'eaaa00',
+        textColor: 'ffffff',
+        backgroundColor: '002855'
+      });
     }
-  }, [isRegistering, isConfirmed]);
+  }, [selectedClinic]);
 
-  const handleRegisterInitiation = (title: string) => {
-    setSelectedClinicTitle(title);
-    setIsRegistering(true);
-  };
-
-  const handleRegisterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsConfirmed(true);
-  };
-
-  if (isConfirmed) {
+  // CALENDLY CLINIC REGISTRATION VIEW
+  if (selectedClinic) {
     return (
-      <div className="min-h-screen bg-[#001a38] text-white pt-32 pb-24 px-4 animate-in zoom-in duration-500">
-        <div className="max-w-2xl mx-auto text-center space-y-8 bg-[#002855] p-12 rounded-3xl border border-[#EAAA00]/30 shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-2 bg-[#EAAA00]"></div>
-          <div className="text-7xl mb-4">⚽</div>
-          <h1 className="text-4xl font-brand font-black uppercase tracking-tight">Registration Sent!</h1>
-          <div className="space-y-2 text-white/70">
-            <p className="text-lg">We've received your registration for <span className="text-[#EAAA00] font-bold">{selectedClinicTitle}</span>.</p>
-            <p className="font-bold text-white">We will reach out shortly with payment details and final instructions.</p>
-          </div>
-          <button 
-            onClick={onBack}
-            className="w-full py-5 bg-[#EAAA00] text-[#002855] font-black uppercase tracking-widest rounded-xl hover:scale-105 transition-all shadow-xl shadow-[#EAAA00]/20"
-          >
-            Back to Home
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  if (isRegistering) {
-    return (
-      <div className="min-h-screen bg-[#001a38] text-white pt-32 pb-24 px-4 animate-in fade-in slide-in-from-bottom-8 duration-500">
-        <div className="max-w-2xl mx-auto space-y-10">
-          <button 
-            onClick={() => setIsRegistering(false)}
-            className="text-[#EAAA00] text-xs font-bold uppercase tracking-[0.3em] hover:tracking-[0.5em] transition-all flex items-center gap-2 group"
-          >
-            <svg className="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-            Back to Details
-          </button>
-
-          <div className="bg-[#002855] p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl space-y-8">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-brand font-black uppercase tracking-tight">Register for Clinic</h2>
-              <p className="text-white/40 text-sm italic">{selectedClinicTitle}</p>
+      <div className="min-h-screen bg-[#001a38] text-white pt-24 pb-20 px-4 animate-in fade-in slide-in-from-right-8 duration-500">
+        <div className="max-w-6xl mx-auto space-y-8">
+          {/* Header with Navigation */}
+          <div className="flex items-center justify-between border-b border-white/10 pb-4">
+            <div className="space-y-1">
+              <button
+                onClick={() => setSelectedClinic(null)}
+                className="text-[#EAAA00] text-[10px] font-bold uppercase tracking-[0.2em] hover:tracking-[0.4em] transition-all flex items-center gap-2 group mb-1"
+              >
+                <svg className="w-3 h-3 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                View All Clinics
+              </button>
+              <h1 className="text-2xl md:text-3xl font-brand font-black uppercase text-white leading-none">{selectedClinic.title}</h1>
+              <p className="text-white/60 text-sm">{selectedClinic.date} • {selectedClinic.time}</p>
             </div>
-            
-            <form onSubmit={handleRegisterSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-white/40 ml-1">Athlete Name</label>
-                <input required type="text" placeholder="First & Last Name" className="w-full bg-[#001a38] border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-[#EAAA00] transition-colors" value={formData.athleteName} onChange={(e) => setFormData({...formData, athleteName: e.target.value})} />
-              </div>
-              <div className="space-y-2">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-white/40 ml-1">Athlete Age</label>
-                <input required type="number" placeholder="Age" className="w-full bg-[#001a38] border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-[#EAAA00] transition-colors" value={formData.age} onChange={(e) => setFormData({...formData, age: e.target.value})} />
-              </div>
-              <div className="space-y-2 md:col-span-2">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-white/40 ml-1">Parent Email Address</label>
-                <input required type="email" placeholder="your@email.com" className="w-full bg-[#001a38] border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-[#EAAA00] transition-colors" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} />
-              </div>
-              <div className="md:col-span-2 pt-4">
-                <button type="submit" className="w-full py-5 bg-[#EAAA00] text-[#002855] font-black uppercase tracking-widest rounded-xl hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-[#EAAA00]/10">Submit Registration</button>
-              </div>
-            </form>
+            <button
+              onClick={onBack}
+              className="flex items-center gap-2 px-6 py-3 bg-[#EAAA00] text-[#002855] font-bold uppercase tracking-widest rounded-lg hover:bg-white transition-all shadow-lg active:scale-95"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+              <span className="hidden md:inline">Home</span>
+            </button>
+          </div>
+
+          {/* Calendly Inline Widget */}
+          <div className="bg-[#001a38] rounded-2xl overflow-hidden shadow-2xl border-2 border-[#EAAA00]/30 p-4" style={{ minHeight: '500px' }}>
+            <div
+              id="calendly-clinic-embed"
+              className="rounded-xl overflow-hidden"
+              style={{ minWidth: '320px', height: '500px', filter: 'brightness(0.95)', overflow: 'hidden' }}
+            ></div>
+          </div>
+
+          {/* Bottom Home Button */}
+          <div className="flex justify-center pt-4">
+            <button
+              onClick={onBack}
+              className="px-8 py-4 bg-transparent border-2 border-[#EAAA00] text-[#EAAA00] font-black uppercase tracking-widest rounded-lg hover:bg-[#EAAA00] hover:text-[#002855] transition-all shadow-lg active:scale-95"
+            >
+              ← Return to Home
+            </button>
           </div>
         </div>
       </div>
@@ -168,8 +166,8 @@ const ClinicsPage: React.FC<ClinicsPageProps> = ({ onBack, onBook }) => {
                 </div>
 
                 <div className="pt-6 md:pt-8">
-                  <button 
-                    onClick={() => handleRegisterInitiation(clinic.title)}
+                  <button
+                    onClick={() => setSelectedClinic(clinic)}
                     className="w-full px-6 md:px-8 py-3.5 md:py-4 bg-[#EAAA00] text-[#002855] font-black uppercase tracking-widest rounded-xl hover:bg-white hover:scale-[1.03] transition-all shadow-lg active:scale-95 text-xs md:text-sm"
                   >
                     Sign Up
