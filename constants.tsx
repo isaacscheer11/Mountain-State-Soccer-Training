@@ -62,22 +62,22 @@ export const WEEKLY_SCHEDULE = {
   ],
   youthClinics: [
     {
-      title: 'Soccer Skills Clinic (Ages 14+)',
+      title: 'Soccer Skills Clinic (Ages 13 & Under)',
       date: 'Sun, Feb 15th',
       time: '3:00 PM - 5:00 PM',
       location: 'Pro Performance Indoor Field',
       address: '460 Mylan Park Lane',
-      ages: '14+',
-      calendlyUrl: 'https://calendly.com/isaacscheer11/soccer-clinic-ages-13-below-clone'
+      ages: '13 & Below',
+      calendlyUrl: 'https://calendly.com/d/ctsf-y3x-9mj/soccer-clinic-ages-13-below'
     },
     {
-      title: 'Soccer Skills Clinic (Ages 13 & Under)',
+      title: 'Soccer Skills Clinic (Ages 14+)',
       date: 'Sun, Feb 15th',
       time: '5:00 PM - 7:00 PM',
       location: 'Pro Performance Indoor Field',
       address: '460 Mylan Park Lane',
-      ages: '13 & Below',
-      calendlyUrl: 'https://calendly.com/isaacscheer11/soccer-clinic-ages-13-below'
+      ages: '14+',
+      calendlyUrl: 'https://calendly.com/d/ctjt-jbw-2cy/soccer-clinic-ages-14-up'
     }
   ]
 };

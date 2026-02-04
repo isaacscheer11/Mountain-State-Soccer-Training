@@ -142,11 +142,11 @@ const ContactSection: React.FC<ContactSectionProps> = ({ onNavigate, onShowWaive
               </li>
               <li>
                 <a 
-                  href="mailto:train@mountainstate.com"
+                  href="mailto:train@mountainstatetraining.com"
                   className="flex gap-4 items-start text-left group hover:text-[#EAAA00] transition-all"
                 >
                   <svg className="w-6 h-6 text-[#EAAA00] shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                  <span className="text-white/80 text-sm group-hover:text-[#EAAA00]">train@mountainstate.com</span>
+                  <span className="text-white/80 text-sm group-hover:text-[#EAAA00]">train@mountainstatetraining.com</span>
                 </a>
               </li>
               <li>

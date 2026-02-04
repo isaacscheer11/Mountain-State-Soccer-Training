@@ -211,7 +211,7 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ onBack, onShowWaiver, onVie
                 <h4 className="text-xl font-brand font-bold">Custom Team Inquiries?</h4>
                 <p className="text-white/60">Looking for team-wide training or recurring seasonal clinics? Contact our staff directly for custom package pricing.</p>
               </div>
-              <a href="mailto:train@mountainstate.com" className="whitespace-nowrap px-8 py-4 bg-white/5 border border-white/10 text-white font-black uppercase tracking-widest rounded-sm hover:bg-white hover:text-[#002855] transition-all active:scale-95">
+              <a href="mailto:train@mountainstatetraining.com" className="whitespace-nowrap px-8 py-4 bg-white/5 border border-white/10 text-white font-black uppercase tracking-widest rounded-sm hover:bg-white hover:text-[#002855] transition-all active:scale-95">
                 Contact Staff
               </a>
            </div>

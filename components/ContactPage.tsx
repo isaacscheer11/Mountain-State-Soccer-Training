@@ -28,7 +28,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ onBack }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
           {/* Email Card */}
           <a 
-            href="mailto:train@mountainstate.com"
+            href="mailto:train@mountainstatetraining.com"
             className="group relative overflow-hidden bg-[#002855] border border-white/10 p-10 rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(234,170,0,0.2)]"
           >
             <div className="relative z-10 flex flex-col items-center text-center space-y-6">
@@ -37,7 +37,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ onBack }) => {
               </div>
               <div className="space-y-2">
                 <h3 className="text-sm font-black uppercase tracking-widest text-[#EAAA00]">Email Us</h3>
-                <p className="text-xl font-bold break-all">train@mountainstate.com</p>
+                <p className="text-xl font-bold break-all">train@mountainstatetraining.com</p>
               </div>
             </div>
             {/* Hover Glow */}
