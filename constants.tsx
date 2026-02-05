@@ -63,7 +63,7 @@ export const WEEKLY_SCHEDULE = {
   youthClinics: [
     {
       title: 'Soccer Skills Clinic (Ages 13 & Under)',
-      date: 'Sun, Feb 15th',
+      date: 'Saturday, February 14th',
       time: '3:00 PM - 5:00 PM',
       location: 'Pro Performance Indoor Field',
       address: '460 Mylan Park Lane',
@@ -72,7 +72,7 @@ export const WEEKLY_SCHEDULE = {
     },
     {
       title: 'Soccer Skills Clinic (Ages 14+)',
-      date: 'Sun, Feb 15th',
+      date: 'Saturday, February 14th',
       time: '5:00 PM - 7:00 PM',
       location: 'Pro Performance Indoor Field',
       address: '460 Mylan Park Lane',
