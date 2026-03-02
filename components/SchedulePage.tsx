@@ -103,11 +103,11 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ onBack, onShowWaiver, onVie
           </div>
 
           {/* Calendly Inline Widget with darker styling - smaller and no scroll */}
-          <div className="bg-[#001a38] rounded-2xl overflow-hidden shadow-2xl border-2 border-[#EAAA00]/30 p-4" style={{ minHeight: '500px' }}>
+          <div className="bg-[#001a38] rounded-2xl overflow-hidden shadow-2xl border-2 border-[#EAAA00]/30 p-4" style={{ minHeight: '400px' }}>
             <div
               id="calendly-embed"
               className="rounded-xl overflow-hidden"
-              style={{ minWidth: '320px', height: '500px', filter: 'brightness(0.95)', overflow: 'hidden' }}
+              style={{ minWidth: '320px', height: '400px', filter: 'brightness(0.95)', overflow: 'hidden' }}
             ></div>
           </div>
 

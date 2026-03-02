@@ -74,11 +74,11 @@ const ClinicsPage: React.FC<ClinicsPageProps> = ({ onBack, onBook }) => {
           </div>
 
           {/* Calendly Inline Widget */}
-          <div className="bg-[#001a38] rounded-2xl overflow-hidden shadow-2xl border-2 border-[#EAAA00]/30 p-4" style={{ minHeight: '500px' }}>
+          <div className="bg-[#001a38] rounded-2xl overflow-hidden shadow-2xl border-2 border-[#EAAA00]/30 p-4" style={{ minHeight: '400px' }}>
             <div
               id="calendly-clinic-embed"
               className="rounded-xl overflow-hidden"
-              style={{ minWidth: '320px', height: '500px', filter: 'brightness(0.95)', overflow: 'hidden' }}
+              style={{ minWidth: '320px', height: '400px', filter: 'brightness(0.95)', overflow: 'hidden' }}
             ></div>
           </div>
 

@@ -66,34 +66,11 @@ const Header: React.FC<HeaderProps> = ({ scrolled, setView, currentView }) => {
         {/* LOGO */}
         <button onClick={() => { setView('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center gap-4 group cursor-pointer outline-none text-left">
           <div className="relative w-16 h-16 transition-transform duration-500 group-hover:scale-110">
-            <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-[0_8px_15px_rgba(0,0,0,0.6)]">
-              <defs>
-                <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style={{ stopColor: '#FFF000', stopOpacity: 1 }} />
-                  <stop offset="50%" style={{ stopColor: '#EAAA00', stopOpacity: 1 }} />
-                  <stop offset="100%" style={{ stopColor: '#8B6B00', stopOpacity: 1 }} />
-                </linearGradient>
-              </defs>
-              <path 
-                d="M10 30 L50 15 L90 30 V60 C90 85 50 95 50 95 C50 95 10 85 10 60 Z" 
-                fill="none" 
-                stroke="#EAAA00" 
-                strokeWidth="2.5" 
-                className="opacity-40 group-hover:opacity-100 transition-opacity duration-500"
-              />
-              <g 
-                fill="url(#goldGradient)" 
-                stroke="#002855" 
-                strokeWidth="2.5" 
-                paintOrder="stroke"
-                className="transition-all duration-300 group-hover:fill-white"
-                style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 900 }}
-              >
-                <text x="33" y="46" fontSize="36" textAnchor="middle" dominantBaseline="middle">M</text>
-                <text x="67" y="46" fontSize="36" textAnchor="middle" dominantBaseline="middle">S</text>
-                <text x="50" y="74" fontSize="36" textAnchor="middle" dominantBaseline="middle">T</text>
-              </g>
-            </svg>
+            <img
+              src="/mst-logo.png"
+              alt="Mountain State Training logo"
+              className="w-full h-full object-contain drop-shadow-[0_8px_15px_rgba(0,0,0,0.6)]"
+            />
           </div>
           <div className="hidden sm:flex flex-col leading-none">
             <span className="text-2xl font-brand font-black tracking-tighter text-white group-hover:text-[#EAAA00] transition-colors duration-300 drop-shadow-lg uppercase">
