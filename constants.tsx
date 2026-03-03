@@ -66,7 +66,7 @@ export const WEEKLY_SCHEDULE = {
       date: 'Sunday, March 22nd',
       time: '2:00 PM - 4:00 PM',
       location: 'Mylan Park Multipurpose Field',
-      address: '460 Mylan Park Lane',
+      address: '138 Mylan Park Ln',
       ages: '13 & Below',
       calendlyUrl: 'https://calendly.com/isaacscheer11/soccer-clinic-ages-13-below-clone-1'
     },
@@ -75,7 +75,7 @@ export const WEEKLY_SCHEDULE = {
       date: 'Sunday, March 22nd',
       time: '4:00 PM - 6:00 PM',
       location: 'Mylan Park Multipurpose Field',
-      address: '460 Mylan Park Lane',
+      address: '138 Mylan Park Ln',
       ages: '14+',
       calendlyUrl: 'https://calendly.com/isaacscheer11/soccer-clinic-ages-13-below-clone'
     }
