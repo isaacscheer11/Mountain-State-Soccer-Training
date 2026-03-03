@@ -47,35 +47,12 @@ const ContactSection: React.FC<ContactSectionProps> = ({ onNavigate, onShowWaive
               onClick={() => onNavigate('home')}
               className="flex items-center gap-4 group cursor-pointer transition-transform duration-500 hover:scale-110 origin-left focus:outline-none"
             >
-              <div className="relative w-12 h-12">
-                <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">
-                  <defs>
-                    <linearGradient id="goldGradientFooter" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" style={{ stopColor: '#FFF000', stopOpacity: 1 }} />
-                      <stop offset="50%" style={{ stopColor: '#EAAA00', stopOpacity: 1 }} />
-                      <stop offset="100%" style={{ stopColor: '#8B6B00', stopOpacity: 1 }} />
-                    </linearGradient>
-                  </defs>
-                  <path 
-                    d="M10 30 L50 15 L90 30 V60 C90 85 50 95 50 95 C50 95 10 85 10 60 Z" 
-                    fill="none" 
-                    stroke="#EAAA00" 
-                    strokeWidth="2.5" 
-                    className="opacity-40 group-hover:opacity-100 transition-opacity duration-500"
-                  />
-                  <g 
-                    fill="url(#goldGradientFooter)" 
-                    stroke="#001025" 
-                    strokeWidth="2.5" 
-                    paintOrder="stroke"
-                    className="transition-all duration-300 group-hover:fill-white"
-                    style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 900 }}
-                  >
-                    <text x="33" y="46" fontSize="36" textAnchor="middle" dominantBaseline="middle">M</text>
-                    <text x="67" y="46" fontSize="36" textAnchor="middle" dominantBaseline="middle">S</text>
-                    <text x="50" y="74" fontSize="36" textAnchor="middle" dominantBaseline="middle">T</text>
-                  </g>
-                </svg>
+              <div className="relative w-16 h-16">
+                <img 
+                  src="/mst-logo.png" 
+                  alt="Mountain State Training logo" 
+                  className="w-full h-full object-contain drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]"
+                />
               </div>
               <div className="flex flex-col text-left">
                 <span className="text-xl font-brand font-black tracking-tighter uppercase group-hover:text-[#EAAA00] transition-colors">MOUNTAIN STATE</span>
