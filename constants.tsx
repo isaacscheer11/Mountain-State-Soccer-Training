@@ -63,7 +63,7 @@ export const WEEKLY_SCHEDULE = {
   youthClinics: [
     {
       title: 'Soccer Skills Clinic (Ages 13 & Under)',
-      date: 'Saturday, April 12th',
+      date: 'Sunday, April 12th',
       time: '2:00 PM - 4:00 PM',
       location: 'Mylan Park Multipurpose Field',
       address: '156 Mylan Park Ln',
@@ -72,7 +72,7 @@ export const WEEKLY_SCHEDULE = {
     },
     {
       title: 'Soccer Skills Clinic (Ages 14+)',
-      date: 'Saturday, April 12th',
+      date: 'Sunday, April 12th',
       time: '4:00 PM - 6:00 PM',
       location: 'Mylan Park Multipurpose Field',
       address: '156 Mylan Park Ln',
