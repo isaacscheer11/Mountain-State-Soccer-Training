@@ -5,23 +5,25 @@ interface TrainerProfile {
   name: string;
   role: string;
   image: string;
+  imageClass?: string;
 }
 
 const TRAINERS: TrainerProfile[] = [
   {
     name: "Brayden Macomber",
     role: "Trainer",
-    image: "/Brayden-Maycomber.jpeg"
-  },
-  {
-    name: "Constantinos Christou",
-    role: "Trainer",
-    image: "/Constantinos Christou.jpg"
+    image: "/Brayden-Maycomber.jpeg",
+    imageClass: "object-[center_28%] scale-[1.35] group-hover:scale-[1.45]"
   },
   {
     name: "Pablo Pozos",
     role: "Trainer",
     image: "/Pablo Pozos.jpg"
+  },
+  {
+    name: "Abbey Olexa",
+    role: "Trainer",
+    image: "/AbbeyOlexa.jpeg"
   }
 ];
 
@@ -102,7 +104,7 @@ const OwnerBio: React.FC<OwnerBioProps> = ({ onBack, onSchedule, initialScrollTo
                     <img
                       src={trainer.image}
                       alt={trainer.name}
-                      className="w-full h-full object-cover object-[center_25%] transition-transform duration-700 group-hover:scale-110"
+                      className={`w-full h-full object-cover transition-transform duration-700 ${trainer.imageClass || 'object-[center_25%] group-hover:scale-110'}`}
                     />
                   </div>
                   <div className="space-y-1">

@@ -9,8 +9,9 @@ import ContactPage from './components/ContactPage';
 import ClinicsPage from './components/ClinicsPage';
 import WaiverModal from './components/WaiverModal';
 import OwnerBio from './components/OwnerBio';
+import PackagesPage from './components/PackagesPage';
 
-export type View = 'home' | 'schedule' | 'about' | 'contact' | 'clinics';
+export type View = 'home' | 'schedule' | 'about' | 'contact' | 'clinics' | 'packages';
 
 const App: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -75,6 +76,15 @@ const App: React.FC = () => {
               onBack={() => setView('home')} 
               onSchedule={() => setView('schedule')}
               initialScrollToMission={scrollToMission} 
+            />
+          </div>
+        )}
+
+        {view === 'packages' && (
+          <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <PackagesPage
+              onBack={() => setView('home')}
+              onSchedule={() => setView('schedule')}
             />
           </div>
         )}

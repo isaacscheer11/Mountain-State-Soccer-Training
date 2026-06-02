@@ -16,8 +16,79 @@ export const SOCIAL_LINKS = [
 export const NAV_LINKS = [
   { label: 'Home', href: '#home' },
   { label: 'Schedule Training', href: '#contact' },
+  { label: 'Training Packages', href: '#packages' },
   { label: 'About Us', href: '#about' },
   { label: 'Contact Us', href: '#contact' }
+];
+
+// NOTE: Replace each `stripeUrl` below with your live Stripe Checkout link for that tier.
+export const TRAINING_PACKAGES = [
+  {
+    id: 'blue',
+    title: 'The Blue Tier',
+    subtitle: 'Consistent growth through group dynamics',
+    price: '$140',
+    period: '/ month',
+    accent: '#3B82F6',
+    featured: false,
+    badge: '',
+    buttonLabel: 'Subscribe to Blue Tier',
+    stripeUrl: 'https://buy.stripe.com/3cI14g3gtdx57yddax00002',
+    bullets: [
+      '4 Group Training Sessions per month',
+      'Train at game-speed alongside competitive local talent',
+      'Sharpen tactical awareness and team-play skills',
+    ],
+  },
+  {
+    id: 'gold',
+    title: 'The Gold Tier',
+    subtitle: 'Hyper-focused, accelerated individual development',
+    price: '$220',
+    period: '/ month',
+    accent: '#EAAA00',
+    featured: false,
+    badge: '',
+    buttonLabel: 'Subscribe to Gold Tier',
+    stripeUrl: 'https://buy.stripe.com/bJe8wI8AN9gP05Lb2p00001',
+    bullets: [
+      '4 Individual 1-on-1 Training Sessions per month',
+      '100% personalized attention tailored directly to your position and goals',
+      'Accelerated skill acquisition with zero distractions',
+    ],
+  },
+  {
+    id: 'platinum',
+    title: 'The Platinum Tier',
+    subtitle: 'The ultimate elite, flexible training experience',
+    price: '$380',
+    period: '/ month',
+    accent: '#CBD5E1',
+    featured: true,
+    badge: 'Most Popular',
+    buttonLabel: 'Subscribe to Platinum Tier',
+    stripeUrl: 'https://buy.stripe.com/aFadR2g3f9gPf0F9Yl00000',
+    bullets: [
+      '8 premium sessions per month — individual or group, your call',
+      'Total flexibility to fit any busy family calendar',
+      'Complete development: skill, strategy, and explosive agility',
+    ],
+  },
+];
+
+export const PACKAGE_STEPS = [
+  {
+    title: 'Pick Your Tier',
+    description: 'Select the Blue, Gold, or Platinum package above and complete your secure monthly subscription.',
+  },
+  {
+    title: 'Receive Your Secure Code',
+    description: 'Check your email instantly for your unique, personalized Member Booking Code.',
+  },
+  {
+    title: 'Schedule Anytime',
+    description: 'Use our standard booking calendar to pick your training times, enter your code at checkout, and your balance drops to $0!',
+  },
 ];
 
 export const PROGRAMS = [
