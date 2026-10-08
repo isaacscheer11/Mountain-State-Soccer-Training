@@ -133,22 +133,13 @@ export const WEEKLY_SCHEDULE = {
   ],
   youthClinics: [
     {
-      title: 'Soccer Skills Clinic (Ages 13 & Under)',
-      date: 'Sunday, April 12th',
-      time: '2:00 PM - 4:00 PM',
-      location: 'Mylan Park Multipurpose Field',
-      address: '156 Mylan Park Ln',
-      ages: '13 & Below',
-      calendlyUrl: 'https://calendly.com/isaacscheer11/soccer-clinic-ages-13-below-clone-1?month=2026-04'
-    },
-    {
-      title: 'Soccer Skills Clinic (Ages 14+)',
-      date: 'Sunday, April 12th',
-      time: '4:00 PM - 6:00 PM',
-      location: 'Mylan Park Multipurpose Field',
-      address: '156 Mylan Park Ln',
-      ages: '14+',
-      calendlyUrl: 'https://calendly.com/isaacscheer11/soccer-clinic-ages-13-below-clone?month=2026-04'
+      title: 'Soccer Skills Clinic',
+      date: 'Sunday, October 18th',
+      time: '3:00 PM - 5:00 PM',
+      location: 'Trinity Christian School',
+      address: '200 Linnehurst Ln',
+      ages: 'All Ages',
+      calendlyUrl: 'https://calendly.com/isaacscheer11/soccer-clinic-10-18'
     }
   ]
 };

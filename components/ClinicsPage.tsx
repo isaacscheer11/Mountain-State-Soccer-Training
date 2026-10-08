@@ -119,9 +119,9 @@ const ClinicsPage: React.FC<ClinicsPageProps> = ({ onBack, onBook }) => {
         </div>
 
         {/* Clinic Options Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 gap-6 md:gap-8 max-w-xl mx-auto">
           {WEEKLY_SCHEDULE.youthClinics.map((clinic, index) => (
-            <div 
+            <div
               key={index}
               className="relative group h-full"
             >
@@ -129,7 +129,7 @@ const ClinicsPage: React.FC<ClinicsPageProps> = ({ onBack, onBook }) => {
               <div className="relative h-full bg-[#002855] border border-white/10 p-6 md:p-8 rounded-3xl shadow-xl flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300">
                 <div className="space-y-4 md:space-y-6">
                   <div className="inline-block px-4 py-1.5 bg-[#EAAA00]/10 text-[#EAAA00] text-[10px] font-black uppercase tracking-widest rounded-full border border-[#EAAA00]/20">
-                    Ages {clinic.ages}
+                    {clinic.ages}
                   </div>
                   <h2 className="text-2xl md:text-3xl font-brand font-black uppercase leading-tight">{clinic.title}</h2>
                   
