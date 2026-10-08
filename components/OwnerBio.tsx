@@ -24,6 +24,11 @@ const TRAINERS: TrainerProfile[] = [
     name: "Abbey Olexa",
     role: "Trainer",
     image: "/AbbeyOlexa.jpeg"
+  },
+  {
+    name: "Bailey Herfurth",
+    role: "Trainer",
+    image: "/BaileyHerfurth.jpeg"
   }
 ];
 
@@ -97,7 +102,7 @@ const OwnerBio: React.FC<OwnerBioProps> = ({ onBack, onSchedule, initialScrollTo
                 All of our trainers are current West Virginia University Men's Soccer players
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
               {TRAINERS.map((trainer, idx) => (
                 <div key={idx} className="flex flex-col items-center space-y-6 group">
                   <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-white/10 group-hover:border-[#EAAA00] transition-colors duration-500 shadow-xl">
